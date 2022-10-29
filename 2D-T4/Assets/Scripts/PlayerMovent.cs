@@ -109,11 +109,16 @@ public class PlayerMovent : MonoBehaviour
         {
             Die();
         }
+        if (collision.gameObject.CompareTag("Monsters"))
+        {
+            Die();
+        }
     }
     private void Die()
     {
         rbody.bodyType = RigidbodyType2D.Static;
         animator.SetTrigger("death");
+        Restart();
     }
     private void Restart()
     {
